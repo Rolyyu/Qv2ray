@@ -108,7 +108,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), QvStateObject("Ma
     QvMessageBusConnect(MainWindow);
     //
     infoWidget = new ConnectionInfoWidget(this);
-    connectionInfoLayout->addWidget(infoWidget);
+    // connectionInfoLayout->addWidget(infoWidget);
     //
     masterLogBrowser->setDocument(vCoreLogDocument);
     vCoreLogHighlighter = new SyntaxHighlighter(GlobalConfig.uiConfig.useDarkTheme, masterLogBrowser->document());
@@ -139,8 +139,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), QvStateObject("Ma
         QvWidgetApplication->ShowTrayMessage(tr("Subscription \"%1\" has been updated").arg(GetDisplayName(gid))); //
     });
     //
-    connect(infoWidget, &ConnectionInfoWidget::OnEditRequested, this, &MainWindow::OnEditRequested);
-    connect(infoWidget, &ConnectionInfoWidget::OnJsonEditRequested, this, &MainWindow::OnEditJsonRequested);
+    // connect(infoWidget, &ConnectionInfoWidget::OnEditRequested, this, &MainWindow::OnEditRequested);
+    // connect(infoWidget, &ConnectionInfoWidget::OnJsonEditRequested, this, &MainWindow::OnEditJsonRequested);
     //
     connect(masterLogBrowser->verticalScrollBar(), &QSlider::valueChanged, this, &MainWindow::OnLogScrollbarValueChanged);
     //
@@ -1095,5 +1095,5 @@ void MainWindow::on_connectionTreeView_clicked(const QModelIndex &index)
     auto widget = GetIndexWidget(index);
     if (widget == nullptr)
         return;
-    infoWidget->ShowDetails(widget->Identifier());
+    // infoWidget->ShowDetails(widget->Identifier());
 }
