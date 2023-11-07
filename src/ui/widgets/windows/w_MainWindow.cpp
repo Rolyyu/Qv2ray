@@ -107,7 +107,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), QvStateObject("Ma
 
     QvMessageBusConnect(MainWindow);
     //
-    infoWidget = new ConnectionInfoWidget(this);
+    // infoWidget = new ConnectionInfoWidget(this);
     // connectionInfoLayout->addWidget(infoWidget);
     //
     masterLogBrowser->setDocument(vCoreLogDocument);
